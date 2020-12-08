@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#bitacora{
+  background-color: #f2f2f2;
+  border: black solid 1px;
+  text-align: center;
+  border-collapse:collapse; 
+}
+
+#bitacora td,th{
+  background-color: #f2f2f2;
+  border: rgb(57, 57, 57) solid 1px;
+  text-align: center;
+  border-collapse:collapse; 
+}

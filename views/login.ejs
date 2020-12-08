@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>login</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form action="/login" method="POST">
+        <label>Usuario</label>
+        <input type="text" name="username" id="username"/>
+        <br/>
+        <label>Password</label>
+        <input type="password" name="password" id="password"/>
+        <br/>
+        <input type="submit" value="login"/>
+        <br/>
+        <a href=/register>Registrarse</a>
+    </form>
+  </body>
+  <% if (locals.msg) { %>
+    <p><%= locals.msg %> </p>
+<% } %>
+</html>

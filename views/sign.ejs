@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Firma de documentos</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Firma de documentos</h1>
+    <form action="/sign" method="post" enctype="multipart/form-data">
+      Selecciona documento a firmar o verificar;
+      <input type="file" name="doc" id="doc">
+      <br/>
+      <h3>Firmar</h3>
+      <input type="submit" value="Firmar" name="submit">
+      <h3>Verificar</h3>
+      <label>Clave Privada:</label>
+      <input type="text" name="key" id="key">
+      <input type="submit" value="Verificar" name="submit">
+    </form>
+    <% if (locals.error) { %>
+      <span><%= locals.error %></span>
+    <% } %>
+    <% if (locals.messages) { %>   
+        <h2>Resultado</h2>   
+        <% locals.messages.forEach(function(msg) { %>
+            <p>
+                <span><%= msg %></span>
+            </p>
+        <% }); %>
+      <% } %>
+    <% if (locals.downloadlink) { %>      
+        <span>Archivo: </span>
+       <a href="<%= locals.downloadlink %>">
+         descargar archivo
+     </a>
+     <% } %>
+     <br/>
+     <a href="/">Volver</a>
+  </body>
+</html>

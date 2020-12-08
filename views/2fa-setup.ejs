@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Agregar autenticacion de dos factores</h1>
+    <img src="<%= locals.qr %>" />
+    <form action="/2fa-setup" method="POST">
+        <label>Codigo</label>
+        <input type="text" name="otp" id="otp" maxlength="6"/>
+        <br/>
+        <input type="submit" value="login"/>
+        <br/>
+    </form>
+    <% if (locals.msg) { %>
+        <p><%= locals.msg %> </p>
+    <% } %></html>
+  </body>
+</html>

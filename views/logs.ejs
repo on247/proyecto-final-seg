@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bitacora</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Bitacora</h1>
+    <table id="bitacora">
+        <thead>
+            <tr>
+               <th>Nombre de usuario</th>
+                <th>Fecha</th>
+                <th>Direccion IP</th>
+            </tr>
+        </thead>
+        <tbody >
+           <% if (locals.logs.length == 0 ) { %>
+                No hay usuarios
+           <% } %>
+           <% if (locals.logs.length > 0 )  { %>
+                <% locals.logs.forEach(log => { %>
+                    <tr>
+                        <td><%= log.username %> </td>
+                        <td><%= Date(log.date) %> </td>
+                        <td><%= log.ip%> </td>
+                        
+                    </tr>
+                <% }) %>
+            <% } %>
+        </tbody>
+    </table>
+  <br/>
+  <a href="/">Volver</a>
+  </body>
+  
+</html>
